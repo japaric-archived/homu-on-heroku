@@ -94,7 +94,7 @@ perform these steps.
 - Tell Homu who has r+ rights.
   - Your Heroku app `HOMU_REVIEWERS` config variable is a space separated list of GitHub users that
   have r+ rights over *all* the repositories (see [Limitations]) Homu is gatekeeping. For example,
-  set it to "moe larry curly" if those three users have r+ rights.
+  set it to "moe larry curly", but without the double quotes, if those three users have r+ rights.
 
 ## Per repository setup
 
