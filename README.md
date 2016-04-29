@@ -76,7 +76,7 @@ you want.
     - `GH_OAUTH_SECRET`: Enter the "Client Secret" of the [Oauth application][1] you created in the
     previous step.
     
-[1]: https://github.com/settings/applications
+[1]: https://github.com/settings/developers
 
 - [Create a Personal Token Account][2] with "repo" scope. Use this token as the `GH_ACCESS_TOKEN`
 config variable in your Heroku app.
