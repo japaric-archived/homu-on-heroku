@@ -106,7 +106,7 @@ collaborator.
 
 - Append this repository to the list of repositories Homu is watching
   - This list is stored in your Heroku app `HOMU_REPOS` config variable as a space-separated list.
-  For example, the variable may look like this after updating it "added/last-time added/just-now",
+  For example, the variable may look like this after updating it: "added/last-time added/just-now",
   where "added" is the owner of the "last-time" and "just-now" repositories.
 
 - Add a webhook to your repository: Go to https://github.com/$OWNER/$REPO/settings/hooks/new and
