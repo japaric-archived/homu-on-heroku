@@ -16,6 +16,10 @@
             "description": "Some \"secret\" that the Homu webhook will use.",
             "generator": "secret"
         },
+        "GIT_SSH_KEY": {
+            "description": "A private SSH key associated with you GitHub account. Setting this value lets Homu use git locally, which speeds up Travis by reducing temporary commits.",
+            "required": "false"
+        },
         "TRAVIS_TOKEN": {
             "description": "Your Travis CI access token.",
             "value": "ignore you will fill this later"

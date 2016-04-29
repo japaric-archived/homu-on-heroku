@@ -96,6 +96,14 @@ perform these steps.
   have r+ rights over *all* the repositories (see [Limitations]) Homu is gatekeeping. For example,
   set it to "moe larry curly", but without the double quotes, if those three users have r+ rights.
 
+- (Optional) Generate a pair of SSH keys, associate them with GitHub and give Homu your private key.
+This lets Homu use git locally which speeds up Travis by reducing temporary commits.
+  - Generate a pair of SSH keys with e.g. `ssh-keygen -t rsa -b 4096 -C "for homu"`.
+  - Associate the public key with [your GitHub account].
+  - Copy the private key into your Heroku app `GIT_SSH_KEY` config variable.
+
+[your GitHub account]: https://github.com/settings/keys
+
 ## Per repository setup
 
 For each repository you want to use with Homu, perform these steps. I'll use the `$OWNER/$REPO`
