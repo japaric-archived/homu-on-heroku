@@ -59,7 +59,7 @@ Login with your `$HOMU_BOT` account and perform these steps:
 
 - [Create an Oauth application][0] with these parameters:
   - Application name: Homu (but anything else will do)
-  - Application description: <empty> (but anything will do)
+  - Application description: \<empty\> (but anything will do)
   - Homepage URL: http://$HEROKU_APP.herokuapp.com
   - Authorization callback URL: http://$HEROKU_APP.herokuapp.com/callback
   
