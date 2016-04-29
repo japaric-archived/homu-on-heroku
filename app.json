@@ -1,26 +1,32 @@
 {
     "env": {
         "GH_ACCESS_TOKEN": {
-            "description": "Personal Access Token of the Homu bot."
+            "description": "Personal Access Token of the Homu bot.",
+            "value": "ignore you will fill this later"
         },
         "GH_OAUTH_ID": {
-            "description": "Oauth ID of the Homu application."
+            "description": "Oauth ID of the Homu application.",
+            "value": "ignore you will fill this later"
         },
         "GH_OAUTH_SECRET": {
-            "description": "Oauth Secret of the Homu application."
+            "description": "Oauth Secret of the Homu application.",
+            "value": "ignore you will fill this later"
         },
         "GH_WEBHOOK_SECRET": {
             "description": "Some \"secret\" that the Homu webhook will use.",
             "generator": "secret"
         },
         "TRAVIS_TOKEN": {
-            "description": "Your Travis CI access token."
+            "description": "Your Travis CI access token.",
+            "value": "ignore you will fill this later"
         },
         "HOMU_REPOS": {
-            "description": "Space separated list of GitHub repositories (in $OWNER/$REPO format) that Homu watches over."
+            "description": "Space separated list of GitHub repositories (in $OWNER/$REPO format) that Homu watches over. Example: \"rust-lang/rust rust-lang/libc\"",
+            "value": "you can fill this later"
         },
         "HOMU_REVIEWERS": {
-            "description": "Space separated list of GitHub users that have \"r+\" rights."
+            "description": "Space separated list of GitHub users that have \"r+\" rights. Example: \"larry moe curly\"",
+            "value": "you can fill this later"
         }
     }
 }
