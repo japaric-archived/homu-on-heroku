@@ -58,10 +58,13 @@ From this point, I'll refer to the name of your Heroku app as `$HEROKU_APP`.
 Login with your `$HOMU_BOT` account and perform these steps:
 
 - [Create an Oauth application][0] with these parameters:
-  - Application name: Homu (but anything else will do)
-  - Application description: \<empty\> (but anything will do)
+  - Application name: homu
+  - Application description: (leave empty)
   - Homepage URL: http://$HEROKU_APP.herokuapp.com
   - Authorization callback URL: http://$HEROKU_APP.herokuapp.com/callback
+  
+*Note* the only field that matters is the callback URL, you can fill the other fields with whatever
+you want.
   
 [0]: https://github.com/settings/applications/new
 
