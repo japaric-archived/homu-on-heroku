@@ -43,9 +43,13 @@ want to use with Homu.
 
 ### Deploy the Heroku app
 
-- Deploy the Heroku app that resides in this repository by clicking the button below.
+- Deploy the Heroku app that resides in this repository by clicking the button below. Go with the
+default values for pretty much everything, but feel free to set a name for the Heroku app.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+Your Heroku app will crash right after deploying it because we haven't set right values for the
+credentials -- we'll do that in a bit.
 
 From this point, I'll refer to the name of your Heroku app as `$HEROKU_APP`.
 
