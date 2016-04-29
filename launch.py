@@ -7,6 +7,8 @@ import sys
 with open('cfg.template.toml') as f:
     template = Template(f.read())
 
+repos = map(lambda slug: slug.split('/'), os.environ['HOMU_REPOS'].split(' '))
+
 homu = {
     'gh': {
         'access_token': os.environ['GH_ACCESS_TOKEN'],
@@ -14,7 +16,7 @@ homu = {
         'oauth_secret': os.environ['GH_OAUTH_SECRET'],
         'webhook_secret': os.environ['GH_WEBHOOK_SECRET'],
     },
-    'repos': map(lambda slug: slug.split('/'), os.environ['HOMU_REPOS'].split(' ')),
+    'repos': repos,
     'reviewers': os.environ['HOMU_REVIEWERS'].split(' '),
     'travis': {
         'token': os.environ['TRAVIS_TOKEN']
