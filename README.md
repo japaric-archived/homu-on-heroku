@@ -138,6 +138,9 @@ That's it! Homu is now gatekeeping this repository. You should now be able to r+
 
 ## Limitations
 
+The Heroku app in its current form has a few limitations, but depending on your usecase these may
+not matter to you. The limitations are listed below:
+
 [Limitations]: #limitations
 
 - We use the same travis token for all the repos. This pretty much means that all the repos
