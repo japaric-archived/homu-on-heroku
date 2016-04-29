@@ -1,1 +1,1 @@
-web: python launch.py
+web: python launch.py -v
