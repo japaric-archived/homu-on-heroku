@@ -79,7 +79,7 @@ you want.
 [1]: https://github.com/settings/developers
 
 - [Create a Personal Token Account][2] with "repo" scope. Use this token as the `GH_ACCESS_TOKEN`
-config variable in your Heroku app.
+config variable of your Heroku app.
 
 [2]: https://github.com/settings/tokens/new
 
