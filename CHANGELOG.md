@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.2.1]
+
 ### Added
 
 - You can now use Homu "local_git" feature which speeds up Travis builds by reducing the number of
@@ -33,6 +35,7 @@ name (e.g. rust-lang/rust and forked/rust).
 
 - Initial release
 
-[Unreleased]: https://github.com/japaric/homu-on-heroku/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/japaric/homu-on-heroku/compare/v0.2.1...HEAD
+[v0.2.1]: https://github.com/japaric/homu-on-heroku/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/japaric/homu-on-heroku/compare/v0.1.1...v0.2.0
 [v0.1.1]: https://github.com/japaric/homu-on-heroku/compare/v0.1.0...v0.1.1
