@@ -101,13 +101,17 @@ perform these steps.
 For each repository you want to use with Homu, perform these steps. I'll use the `$OWNER/$REPO`
 "slug" to refer to a repository that has URL: https://github.com/$OWNER/$REPO.
 
-- Go to https://github.com/$OWNER/$REPO/settings/collaboration and add `$HOMU_BOT` as a
-collaborator.
-
 - Append this repository to the list of repositories Homu is watching
   - This list is stored in your Heroku app `HOMU_REPOS` config variable as a space-separated list.
   For example, the variable may look like this after updating it: "added/last-time added/just-now",
   where "added" is the owner of the "last-time" and "just-now" repositories.
+
+After updating this variable with at least one repository, your Heroku app should get to the point
+where it doesn't crash and it should render its dashboard. Head to
+`http://$HEROKU_APP.herokuapp.com` to confirm.
+
+- Go to https://github.com/$OWNER/$REPO/settings/collaboration and add `$HOMU_BOT` as a
+collaborator.
 
 - Add a webhook to your repository: Go to https://github.com/$OWNER/$REPO/settings/hooks/new and
 fill the fields with:
