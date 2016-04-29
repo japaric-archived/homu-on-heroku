@@ -37,6 +37,7 @@ with open('cfg.toml', 'w') as f:
     f.write(template.render(homu=homu))
 
 os.makedirs(os.path.join(os.path.expanduser('~'), '.ssh'))
-utils.logged_call(['sh', '-c', 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts'])
+utils.logged_call(['sh', '-c',
+                   'ssh-keyscan -H github.com >> ~/.ssh/known_hosts'])
 
 sys.exit(main())
