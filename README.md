@@ -47,10 +47,6 @@ want to use with Homu.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-- (Optional) Change the name of your app in your Heroku [dashboard].
-
-[dashboard]: https://dashboard.heroku.com/apps/
-
 From this point, I'll refer to the name of your Heroku app as `$HEROKU_APP`.
 
 ### Under the `$HOMU_BOT` account
