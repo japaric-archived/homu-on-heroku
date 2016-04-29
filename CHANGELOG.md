@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- You can now use Homu "local_git" feature which speeds up Travis builds by reducing the number of
+temporary commits.
+
 ## [v0.2.0] - 2016-04-29
 
 ### Added
