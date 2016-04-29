@@ -60,7 +60,7 @@ Login with your `$HOMU_BOT` account and perform these steps:
 - [Create an Oauth application][0] with these parameters:
   - Application name: homu
   - Application description: (leave empty)
-  - Homepage URL: `http://$HEROKU_APP.herokuapp.com`
+  - Homepage URL: `https://$HEROKU_APP.herokuapp.com`
   - Authorization callback URL: `http://$HEROKU_APP.herokuapp.com/callback`
   
 **NOTE** the only field that matters is the callback URL, you can fill the other fields with whatever
@@ -116,7 +116,7 @@ For each repository you want to use with Homu, perform these steps. I'll use the
 
 After updating this variable with at least one repository, your Heroku app should get to the point
 where it doesn't crash and it should render its dashboard. Head to
-`http://$HEROKU_APP.herokuapp.com` to confirm.
+`https://$HEROKU_APP.herokuapp.com` to confirm.
 
 - Go to https://github.com/$OWNER/$REPO/settings/collaboration and add `$HOMU_BOT` as a
 collaborator.
