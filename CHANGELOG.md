@@ -10,6 +10,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add CHANGELOG.md.
 - README: Add instructions on how to update a deployed Heroku app.
 
+### Changed
+
+- Use full "repo slug" (e.g. rust-lang/rust) instead of just the repo name (e.g. rust) to identify
+each repository. This lets Homu monitor repositories from different owners but that share the same
+name (e.g. rust-lang/rust and forked/rust).
+
 ## [v0.1.1] - 2016-04-29
 
 ### Fixed
