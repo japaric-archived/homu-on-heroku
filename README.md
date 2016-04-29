@@ -134,9 +134,7 @@ notifications:
     webhooks: http://$HEROKU_APP.herokuapp.com/travis
 ```
 
-That's it! Homu is now gatekeeping this repository. If you visit http://$HEROKU_APP.herokuapp.com
-the repository you just configured should be listed over there and you should be able to r+ pull
-requests.
+That's it! Homu is now gatekeeping this repository. You should now be able to r+ pull requests.
 
 ## Limitations
 
