@@ -1,0 +1,26 @@
+{
+    "env": {
+        "GH_ACCESS_TOKEN": {
+            "description": "Personal Access Token of the Homu bot."
+        },
+        "GH_OAUTH_ID": {
+            "description": "Oauth ID of the Homu application."
+        },
+        "GH_OAUTH_SECRET": {
+            "description": "Oauth Secret of the Homu application."
+        },
+        "GH_WEBHOOK_SECRET": {
+            "description": "Some \"secret\" that the Homu webhook will use.",
+            "generator": "secret"
+        },
+        "TRAVIS_TOKEN": {
+            "description": "Your Travis CI access token."
+        },
+        "HOMU_REPOS": {
+            "description": "Space separated list of GitHub repositories (in $OWNER/$REPO format) that Homu watches over."
+        },
+        "HOMU_REVIEWERS": {
+            "description": "Space separated list of GitHub users that have \"r+\" rights."
+        }
+    }
+}

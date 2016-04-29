@@ -1,0 +1,36 @@
+[github]
+
+# Information for securely interacting with GitHub. These are found/generated
+# under <https://github.com/settings/applications>.
+
+# A GitHub personal access token
+access_token = "{{ homu.gh.access_token }}"
+
+# A GitHub oauth application for this instance of homu:
+app_client_id = "{{ homu.gh.oauth_id }}"
+app_client_secret = "{{ homu.gh.oauth_secret }}"
+
+[web]
+port = {{ homu.web.port }}
+
+{% for repo in homu.repos %}
+[repo.{{ repo[1] }}]
+
+# github.com/<owner>/<name>
+owner = "{{ repo[0] }}"
+name = "{{ repo[1] }}"
+
+# who has r+ rights?
+reviewers = {{ homu.reviewers }}
+
+[repo.{{ repo[1] }}.github]
+
+# arbitrary secret (e.g. openssl rand -hex 20)
+secret = "{{ homu.gh.webhook_secret }}"
+
+[repo.{{ repo[1] }}.travis]
+
+# found under <https://travis-ci.org/profile/info>.
+token = "{{ homu.travis.token }}"
+
+{% endfor %}
