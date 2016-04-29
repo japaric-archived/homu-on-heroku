@@ -163,6 +163,25 @@ TRAVIS_TOKEN_FOR_${OWNER//-/_}_${REPO//-/_}="deadc0de"
 # then ${VAR//-/_} is "the_three_stooges"
 ```
 
+## Updating your Heroku app
+
+In the future, I might update the Heroku app in this repository and you may want to update your
+deployed Heroku app to use a new release. You can do that with the following commands:
+
+**NOTE** To run these commands, you'll need to have the [Heroku toolbelt] installed. Alternatively,
+you can use [this Docker image] that comes with a pre-installed Heroku toolbelt.
+
+[Heroku toolbelt]: https://toolbelt.heroku.com/
+[this Docker image]: https://hub.docker.com/r/japaric/heroku/
+
+```
+$ heroku login
+$ git clone https://github.com/japaric/homu-on-heroku
+$ cd homu-on-heroku
+$ git remote add heroku https://git.heroku.com/$HEROKU_APP.git
+$ git push heroku master
+```
+
 ## License
 
 Licensed under either of
