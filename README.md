@@ -10,8 +10,8 @@ repositories (for more details about Homu check its [GitHub repository][Homu] an
 [Homu]: https://github.com/barosl/homu
 
 [homu.io] is a Homu instance plus a front-end that lets you easily use Homu with your repositories.
-However, right now [homu.io] is not accepting registration of new repositories, though its
-associated [@homu] bot is still working non-stop on the repositories that were already registered.
+However, right now homu.io is not accepting registration of new repositories, though its associated
+[@homu] bot is still working non-stop on the repositories that were already registered.
 
 [homu.io]: http://homu.io/
 [@homu]: https://github.com/homu
