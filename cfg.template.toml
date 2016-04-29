@@ -10,6 +10,10 @@ access_token = "{{ homu.gh.access_token }}"
 app_client_id = "{{ homu.gh.oauth_id }}"
 app_client_secret = "{{ homu.gh.oauth_secret }}"
 
+[git]
+local_git = {{ homu.git.local_git }}
+ssh_key = """{{ homu.git.ssh_key}}"""
+
 [web]
 port = {{ homu.web.port }}
 
