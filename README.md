@@ -63,7 +63,7 @@ Login with your `$HOMU_BOT` account and perform these steps:
   - Homepage URL: http://$HEROKU_APP.herokuapp.com
   - Authorization callback URL: http://$HEROKU_APP.herokuapp.com/callback
   
-*Note* the only field that matters is the callback URL, you can fill the other fields with whatever
+**NOTE** the only field that matters is the callback URL, you can fill the other fields with whatever
 you want.
   
 [0]: https://github.com/settings/applications/new
