@@ -9,11 +9,6 @@ with open('cfg.template.toml') as f:
 
 ssh_key = os.environ.get('GIT_SSH_KEY', '')
 
-if ssh_key:
-    local_git = "true"
-else:
-    local_git = "false"
-
 repos = map(lambda slug: slug.split('/'), os.environ['HOMU_REPOS'].split(' '))
 
 homu = {
