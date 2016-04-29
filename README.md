@@ -1,6 +1,6 @@
 # `homu-on-heroku`
 
-> How-to: Deploy a [Homu] instance on [Heroku].
+> How to deploy a [Homu] instance to [Heroku]
 
 [Heroku]: https://www.heroku.com
 
