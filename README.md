@@ -130,7 +130,8 @@ branches:
     only:
         - auto
 
-webhooks: http://$HEROKU_APP.herokuapp.com/travis
+notifications:
+    webhooks: http://$HEROKU_APP.herokuapp.com/travis
 ```
 
 That's it! Homu is now gatekeeping this repository. If you visit http://$HEROKU_APP.herokuapp.com
