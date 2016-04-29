@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.2.0] - 2016-04-29
+
 ### Added
 
 - Add CHANGELOG.md.
@@ -26,5 +28,6 @@ name (e.g. rust-lang/rust and forked/rust).
 
 - Initial release
 
-[Unreleased]: https://github.com/japaric/homu-on-heroku/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/japaric/homu-on-heroku/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/japaric/homu-on-heroku/compare/v0.1.1...v0.2.0
 [v0.1.1]: https://github.com/japaric/homu-on-heroku/compare/v0.1.0...v0.1.1
