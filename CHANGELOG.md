@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Operational notes to the README. Explanations of some undocumented Homu features/behaviors.
+
 ## [v0.2.1]
 
 ### Added

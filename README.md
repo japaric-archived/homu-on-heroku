@@ -20,8 +20,9 @@ Until [homu.io] "re-opens" its registration page, you can deploy your own Homu i
 Heroku dyno and use it with all your repositories. The rest of this document will tell you how to do
 that.
 
-**WARNING** This document doesn't cover how to use Homu or explain Homu terminology like "r+"
-because that's covered by the [homu.io] website.
+~~**WARNING** This document doesn't cover how to use Homu or explain Homu terminology like "r+"
+because that's covered by the [homu.io] website.~~ Actually, I'm going to cover a little on how Homu
+works because there's not much documentation on some features. See the [operational notes] section.
 
 ## What you'll need
 
@@ -136,11 +137,15 @@ succeed at this point. If not check your Heroku app logs for clues about what we
 ```
 branches:
     only:
+        # Only needed if you are already using branches.only.
         - auto
 
 notifications:
     webhooks: http://$HEROKU_APP.herokuapp.com/travis
 ```
+
+If you are going to use the "try" feature you'll also need to add the try branch to the
+branches.only list. Again, this is only necessary if you are already using the branches.only list.
 
 That's it! Homu is now gatekeeping this repository. You should now be able to r+ pull requests.
 
@@ -189,6 +194,36 @@ $ cd homu-on-heroku
 $ git remote add heroku https://git.heroku.com/$HEROKU_APP.git
 $ git push heroku master
 ```
+
+## Operational notes
+
+[operational notes]: #operational-notes
+
+### What does the synchronize button do?
+
+When you configure your repository to work with Homu for the first time, Homu doesn't know about the
+**existing** PRs opened against your repo -- that's why the Homu queue for your repository is empty.
+The synchronize button makes Homu go through your opened PRs and adds them to the queue.
+
+**WARNING** The synchronize button on queue/all is known to not work. You'll get an internal server
+error.
+
+**NOTE** You don't need to click the synchronize button to make Homu learn about **new** PRs because
+Homu will do that automatically.
+
+Another scenario where you might need to use it is when new PRs are sent against your repo while
+Homu was sleeping (if you are running it on a free dyno).
+
+### Homu is not listening to my commands
+
+Homu only listen to commands on PRs that appear on your repository queue. If your PR doesn't appear
+on the queue you probably need to use the synchronize button.
+
+### Homu got stuck testing a PR
+
+This might happen if Homu was sleeping when the Travis test finished. The PR will appear as
+"pending" in queue even though the Travis build finished. One way to unstuck Homu is to push a new
+commit to the PR or force push an amendment to the HEAD commit without any change.
 
 ## License
 
