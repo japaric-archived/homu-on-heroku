@@ -124,7 +124,7 @@ collaborator.
 
 - Add a webhook to your repository: Go to https://github.com/$OWNER/$REPO/settings/hooks/new and
 fill the fields with:
-  - Payload URL: `http://$HEROKU_APP.herokuapp.com/github`
+  - Payload URL: `https://$HEROKU_APP.herokuapp.com/github`
   - Content type: application/json
   - Secret: (the value of your Heroku app `GH_WEBHOOK_SECRET` config variable)
   - Events: (pick 'let me select individual events' and choose Issue comment, Pull request and Push)
@@ -141,7 +141,7 @@ branches:
         - auto
 
 notifications:
-    webhooks: http://$HEROKU_APP.herokuapp.com/travis
+    webhooks: https://$HEROKU_APP.herokuapp.com/travis
 ```
 
 If you are going to use the "try" feature you'll also need to add the try branch to the
