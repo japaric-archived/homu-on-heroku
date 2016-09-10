@@ -18,27 +18,35 @@ ssh_key = """{{ homu.git.ssh_key}}"""
 port = {{ homu.web.port }}
 
 {% for repo in homu.repos %}
-[repo.'{{ repo[0] }}/{{ repo[1] }}']
+[repo.'{{ repo.slug }}']
 
 # github.com/<owner>/<name>
-owner = "{{ repo[0] }}"
-name = "{{ repo[1] }}"
+owner = "{{ repo.owner }}"
+name = "{{ repo.name }}"
 
 # who has r+ rights?
 reviewers = {{ homu.reviewers }}
 
-[repo.'{{ repo[0] }}/{{ repo[1] }}'.github]
+[repo.'{{ repo.slug }}'.github]
 
 # arbitrary secret (e.g. openssl rand -hex 20)
 secret = "{{ homu.gh.webhook_secret }}"
 
-[repo.'{{ repo[0] }}/{{ repo[1] }}'.travis]
+{% if repo.appveyor %}
+[repo.'{{ repo.slug }}'.status.appveyor]
+
+context = "continuous-integration/appveyor/branch"
+{% endif %}
+
+{% if repo.travis %}
+[repo.'{{ repo.slug }}'.travis]
 
 # found under <https://travis-ci.org/profile/info>.
 token = "{{ homu.travis.token }}"
 
-[repo.'{{ repo[0] }}/{{ repo[1] }}'.status.travis]
+[repo.'{{ repo.slug }}'.status.travis]
 
 context = "continuous-integration/travis-ci/push"
+{% endif %}
 
 {% endfor %}

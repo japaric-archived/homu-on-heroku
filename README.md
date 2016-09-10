@@ -110,14 +110,17 @@ This lets Homu use git locally which speeds up Travis by reducing temporary comm
 For each repository you want to use with Homu, perform these steps. I'll use the `$OWNER/$REPO`
 "slug" to refer to a repository that has URL: https://github.com/$OWNER/$REPO.
 
-- Append this repository to the list of repositories Homu is watching
-  - This list is stored in your Heroku app `HOMU_REPOS` config variable as a space-separated list.
-  For example, the variable may look like this after updating it: "added/last-time added/just-now",
-  where "added" is the owner of the "last-time" and "just-now" repositories.
+- Append this repository to the list of repositories Homu is watching.
 
-After updating this variable with at least one repository, your Heroku app should get to the point
-where it doesn't crash and it should render its dashboard. Head to
-`https://$HEROKU_APP.herokuapp.com` to confirm.
+Currently, homu keeps two list of repos. Each list is stored as a config variable whose format is a
+space-separated list of repo slugs e.g. "japaric/homu-on-heroku rust-lang/rust". The config var
+`HOMU_TRAVIS_REPOS` lists the repos that must always pass Travis CI and `HOMU_APPVEYOR_REPOS` lists
+the repos that must always pass AppVeyor CI. If a repository must pass both AppVeyor and Travis then
+it must appear in both lists.
+
+After updating these variables to not be empty, your Heroku app should get to the point where it
+doesn't crash and it should render its dashboard. Head to `https://$HEROKU_APP.herokuapp.com` to
+confirm.
 
 - Go to https://github.com/$OWNER/$REPO/settings/collaboration and add `$HOMU_BOT` as a
 collaborator.
