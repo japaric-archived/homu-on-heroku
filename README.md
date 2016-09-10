@@ -127,7 +127,8 @@ fill the fields with:
   - Payload URL: `https://$HEROKU_APP.herokuapp.com/github`
   - Content type: application/json
   - Secret: (the value of your Heroku app `GH_WEBHOOK_SECRET` config variable)
-  - Events: (pick 'let me select individual events' and choose Issue comment, Pull request and Push)
+  - Events: (pick 'let me select individual events' and choose Issue comment, Pull request, Push and
+    **Status**)
   
 After you create the webhook, GitHub will send a test payload to test your service. This test should
 succeed at this point. If not check your Heroku app logs for clues about what went wrong.

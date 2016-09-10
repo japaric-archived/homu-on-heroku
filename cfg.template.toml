@@ -37,4 +37,8 @@ secret = "{{ homu.gh.webhook_secret }}"
 # found under <https://travis-ci.org/profile/info>.
 token = "{{ homu.travis.token }}"
 
+[repo.'{{ repo[0] }}/{{ repo[1] }}'.status.travis]
+
+context = "continuous-integration/travis-ci/push"
+
 {% endfor %}
