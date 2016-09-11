@@ -13,6 +13,7 @@ app_client_secret = "{{ homu.gh.oauth_secret }}"
 [git]
 local_git = {{ homu.git.local_git }}
 ssh_key = """{{ homu.git.ssh_key}}"""
+status_based_exemption = {{ homu.git.local_git }}
 
 [web]
 port = {{ homu.web.port }}
@@ -39,11 +40,6 @@ context = "continuous-integration/appveyor/branch"
 {% endif %}
 
 {% if repo.travis %}
-[repo.'{{ repo.slug }}'.travis]
-
-# found under <https://travis-ci.org/profile/info>.
-token = "{{ homu.travis.token }}"
-
 [repo.'{{ repo.slug }}'.status.travis]
 
 context = "continuous-integration/travis-ci/push"

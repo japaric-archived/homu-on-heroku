@@ -20,10 +20,6 @@
             "description": "A private SSH key associated with you GitHub account. Setting this value lets Homu use git locally, which speeds up Travis by reducing temporary commits.",
             "required": false
         },
-        "TRAVIS_TOKEN": {
-            "description": "Your Travis CI access token.",
-            "value": "ignore you will fill this later"
-        },
         "HOMU_APPVEYOR_REPOS": {
             "description": "Space separated list of GitHub repositories, in $OWNER/$REPO format, that Homu watches over and must always pass AppVeyor CI. Example value: \"rust-lang/rust rust-lang/libc\" but without the double quotes.",
             "value": "you can fill this later"

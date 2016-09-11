@@ -89,9 +89,6 @@ you want.
 Login with your main GitHub account, the one that owns the repositories you want use Homu with, and
 perform these steps.
 
-- Head to https://travis-ci.org/profile/info and copy the token listed there into your Heroku app
-`TRAVIS_TOKEN` config variable.
-
 - Tell Homu who has r+ rights.
   - Your Heroku app `HOMU_REVIEWERS` config variable is a space separated list of GitHub users that
   have r+ rights over *all* the repositories (see [Limitations]) Homu is gatekeeping. For example,
@@ -160,8 +157,6 @@ not matter to you. The limitations are listed below:
 
 [Limitations]: #limitations
 
-- We use the same travis token for all the repos. This pretty much means that all the repos
-that Homu watches over must be owned by the same GitHub user/organization.
 - We use the same set of reviewers for all the repos.
 
 Both issues can be fixed with config variables that override the "global" values on a per repository
@@ -170,11 +165,9 @@ basis. We just have to settle on a format for the variable name. Strawman format
 ```
 # Global values
 HOMU_REVIEWERS="larry moe curly"
-TRAVIS_TOKEN="deadbeef"
 
 # Overrides
 HOMU_REVIEWERS_FOR_${OWNER//-/_}_${REPO//-/_}="larry moe"
-TRAVIS_TOKEN_FOR_${OWNER//-/_}_${REPO//-/_}="deadc0de"
 
 # NOTE ${VAR//-/_} means $VAR but with the `-` replaced with `_`. Example: if VAR=the-three-stooges,
 # then ${VAR//-/_} is "the_three_stooges"

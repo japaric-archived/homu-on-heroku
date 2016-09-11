@@ -49,9 +49,6 @@ homu = {
     },
     'repos': repos.values(),
     'reviewers': os.environ['HOMU_REVIEWERS'].split(' '),
-    'travis': {
-        'token': os.environ['TRAVIS_TOKEN']
-    },
     'web': {
         'port': os.environ['PORT'],
     },
