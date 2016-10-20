@@ -38,14 +38,17 @@ secret = "{{ homu.gh.webhook_secret }}"
 
 {% if repo.appveyor %}
 [repo.'{{ repo.slug }}'.status.appveyor]
-
 context = "continuous-integration/appveyor/branch"
 {% endif %}
 
 {% if repo.travis %}
 [repo.'{{ repo.slug }}'.status.travis]
-
 context = "continuous-integration/travis-ci/push"
+{% endif %}
+
+{% if repo.solano %}
+[repo.'{{ repo.slug }}'.status.solano]
+context = "ci/solano-ci"
 {% endif %}
 
 {% endfor %}

@@ -19,6 +19,9 @@ def append(slug, ci):
         if ci == 'appveyor':
             repos[slug]['appveyor'] = True
 
+        if ci == 'solano':
+            repos[slug]['solano'] = True
+
         if ci == 'travis':
             repos[slug]['travis'] = True
     else:
@@ -30,6 +33,7 @@ def append(slug, ci):
             'owner': owner,
             'slug': slug,
             'travis': True if ci == 'travis' else False,
+            'solano': True if ci == 'solano' else False,
         }
 
 for slug in os.environ['HOMU_APPVEYOR_REPOS'].split(' '):
@@ -37,6 +41,9 @@ for slug in os.environ['HOMU_APPVEYOR_REPOS'].split(' '):
 
 for slug in os.environ['HOMU_TRAVIS_REPOS'].split(' '):
     append(slug, 'travis')
+
+for slug in os.environ['HOMU_SOLANO_REPOS'].split(' '):
+    append(slug, 'solano')
 
 homu = {
     'gh': {
