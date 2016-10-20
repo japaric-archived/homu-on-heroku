@@ -62,6 +62,7 @@ homu = {
     'repos': repos.values(),
     'reviewers': os.environ['HOMU_REVIEWERS'].split(' '),
     'web': {
+        'host': 'localhost',
         'port': os.environ['PORT'],
         'secret': admin_secret if admin_secret else 'false'
     },
