@@ -16,7 +16,7 @@ ssh_key = """{{ homu.git.ssh_key}}"""
 status_based_exemption = {{ homu.git.local_git }}
 
 [web]
-host = {{ homu.web.host }}
+host = "{{ homu.web.host }}"
 port = {{ homu.web.port }}
 {% if homu.web.secret %}
 secret = "{{ homu.web.secret }}"
