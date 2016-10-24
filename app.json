@@ -22,11 +22,17 @@
         },
         "HOMU_APPVEYOR_REPOS": {
             "description": "Space separated list of GitHub repositories, in $OWNER/$REPO format, that Homu watches over and must always pass AppVeyor CI. Example value: \"rust-lang/rust rust-lang/libc\" but without the double quotes.",
-            "value": "you can fill this later"
+            "value": "you can fill this later",
+            "required": false
         },
         "HOMU_TRAVIS_REPOS": {
             "description": "Pretty much the same as HOMU_APPVEYOR_REPOS. But these repositories must always pass Travis CI",
-            "value": "you can fill this later"
+            "value": "organization/some_repo other-org/other-repo"
+        },
+        "HOMU_SOLANO_REPOS": {
+            "description": "Pretty much the same as HOMU_APPVEYOR_REPOS. But these repositories must always pass Solano CI",
+            "value": "you can fill this later",
+            "required": false
         },
         "HOMU_REVIEWERS": {
             "description": "Space separated list of GitHub users that have \"r+\" rights. Example value: \"larry moe curly\" but without the double quotes.",
