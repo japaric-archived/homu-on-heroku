@@ -63,7 +63,8 @@ os.makedirs(os.path.join(os.path.expanduser('~'), '.ssh'), exist_ok=True)
 
 if os.path.isfile(os.path.expanduser('~/.ssh/known_hosts')):
     # grep exits 0 (which becomes false) if it finds the pattern
-    github_unknown = bool(os.system('grep "^github.com " ~/.ssh/known_hosts > /dev/null'))
+    exit_code = os.system('grep "^github.com " ~/.ssh/known_hosts > /dev/null')
+    github_unknown = bool(exit_code)
 else:
     github_unknown = True
 
