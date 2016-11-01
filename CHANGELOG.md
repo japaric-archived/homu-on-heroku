@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Operational notes to the README. Explanations of some undocumented Homu features/behaviors.
+- Script to sync all repos' PR status from GitHub via Heroku scheduler
 
 ## [v0.2.1]
 
