@@ -57,8 +57,10 @@ homu = {
 with open('cfg.toml', 'w') as f:
     f.write(template.render(homu=homu))
 
-os.makedirs(os.path.join(os.path.expanduser('~'), '.ssh'))
-utils.logged_call(['sh', '-c',
-                   'ssh-keyscan -H github.com >> ~/.ssh/known_hosts'])
+os.makedirs(os.path.join(os.path.expanduser('~'), '.ssh'), exist_ok=True)
+# grep exits 0 (which is false) if it finds the pattern
+if os.system('grep "^github.com " ~/.ssh/known_hosts > /dev/null'):
+    utils.logged_call(['sh', '-c',
+                       'ssh-keyscan github.com >> ~/.ssh/known_hosts'])
 
 sys.exit(main())
