@@ -9,6 +9,7 @@ with open('cfg.template.toml') as f:
     template = Template(f.read())
 
 ssh_key = os.environ.get('GIT_SSH_KEY', '')
+admin_secret = os.environ.get('HOMU_WEB_SECRET', '')
 
 repos = {}
 
@@ -51,6 +52,7 @@ homu = {
     'reviewers': os.environ['HOMU_REVIEWERS'].split(' '),
     'web': {
         'port': os.environ['PORT'],
+        'secret': admin_secret if admin_secret else 'false'
     },
 }
 
