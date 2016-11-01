@@ -60,8 +60,11 @@ with open('cfg.toml', 'w') as f:
     f.write(template.render(homu=homu))
 
 os.makedirs(os.path.join(os.path.expanduser('~'), '.ssh'), exist_ok=True)
-# grep exits 0 (which is false) if it finds the pattern
-if os.system('grep "^github.com " ~/.ssh/known_hosts > /dev/null'):
+
+if os.path.isfile(os.path.expanduser('~/.ssh/known_hosts')):
+    # grep exits 0 (which becomes false) if it finds the pattern
+    github_unknown = bool(os.system('grep "^github.com " ~/.ssh/known_hosts > /dev/null'))
+if github_unknown:
     utils.logged_call(['sh', '-c',
                        'ssh-keyscan github.com >> ~/.ssh/known_hosts'])
 
