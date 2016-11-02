@@ -13,6 +13,7 @@ admin_secret = os.environ.get('HOMU_WEB_SECRET', '')
 
 repos = {}
 
+
 def append(slug, ci):
     if slug in repos:
         if ci == 'appveyor':
