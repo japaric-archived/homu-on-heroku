@@ -9,8 +9,10 @@ with open('cfg.template.toml') as f:
     template = Template(f.read())
 
 ssh_key = os.environ.get('GIT_SSH_KEY', '')
+admin_secret = os.environ.get('HOMU_WEB_SECRET', '')
 
 repos = {}
+
 
 def append(slug, ci):
     if slug in repos:
@@ -51,14 +53,24 @@ homu = {
     'reviewers': os.environ['HOMU_REVIEWERS'].split(' '),
     'web': {
         'port': os.environ['PORT'],
+        'secret': admin_secret if admin_secret else 'false'
     },
 }
 
 with open('cfg.toml', 'w') as f:
     f.write(template.render(homu=homu))
 
-os.makedirs(os.path.join(os.path.expanduser('~'), '.ssh'))
-utils.logged_call(['sh', '-c',
-                   'ssh-keyscan -H github.com >> ~/.ssh/known_hosts'])
+os.makedirs(os.path.join(os.path.expanduser('~'), '.ssh'), exist_ok=True)
+
+if os.path.isfile(os.path.expanduser('~/.ssh/known_hosts')):
+    # grep exits 0 (which becomes false) if it finds the pattern
+    exit_code = os.system('grep "^github.com " ~/.ssh/known_hosts > /dev/null')
+    github_unknown = bool(exit_code)
+else:
+    github_unknown = True
+
+if github_unknown:
+    utils.logged_call(['sh', '-c',
+                       'ssh-keyscan github.com >> ~/.ssh/known_hosts'])
 
 sys.exit(main())

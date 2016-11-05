@@ -1,1 +1,3 @@
-cfg.toml
+/cfg.toml
+/main.db
+/src/

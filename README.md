@@ -54,6 +54,25 @@ credentials -- we'll do that in a bit.
 
 From this point, I'll refer to the name of your Heroku app as `$HEROKU_APP`.
 
+### Schedule synchronization
+
+Homu stores information about open PRs in a SQLite database that is destroyed every night, when Heroku
+automatically restarts the Homu web dyno. Rebuild the database of PRs automatically by running the
+`sync_all.sh` script from this repo once per day, after the dyno has been restarted.
+
+- Set the env var APP_URL to the full URL of your app. For example,
+  "https://homu.herokuapp.com". If you are pushing this commit to an existing
+  Heroku app, you will also need to set `HOMU_WEB_SECRET` to something like
+  `openssl rand -hex 20`.
+- Visit dashboard.heroku.com and open the Metrics tab to find out what time
+  Heroku restarts your dyno each night. It will be a blue dot on the top graph,
+  and will tell you the exact time when you hover over the dot with your mouse.
+- Run `heroku addons:add scheduler` to add the scheduler to your app, then run
+  `heroku addons:open scheduler` to open the scheduler admin panel.
+- Add a new job, and choose a time that is shortly after the scheduled restart
+  of your dyno every night. Set the job's frequency to "Daily", and set the
+  command to `bash sync_all.sh`.
+
 ### Under the `$HOMU_BOT` account
 
 Login with your `$HOMU_BOT` account and perform these steps:
@@ -115,7 +134,7 @@ space-separated list of repo slugs e.g. "japaric/homu-on-heroku rust-lang/rust".
 the repos that must always pass AppVeyor CI. If a repository must pass both AppVeyor and Travis then
 it must appear in both lists.
 
-After updating these variables to not be empty, your Heroku app should get to the point where it
+After updating these variables, your Heroku app should get to the point where it
 doesn't crash and it should render its dashboard. Head to `https://$HEROKU_APP.herokuapp.com` to
 confirm.
 

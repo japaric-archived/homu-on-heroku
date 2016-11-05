@@ -31,6 +31,10 @@
         "HOMU_REVIEWERS": {
             "description": "Space separated list of GitHub users that have \"r+\" rights. Example value: \"larry moe curly\" but without the double quotes.",
             "value": "you can fill this later"
+        },
+        "HOMU_WEB_SECRET": {
+            "description": "Some \"secret\" that the sync_all script will use.",
+            "generator": "secret"
         }
     }
 }
