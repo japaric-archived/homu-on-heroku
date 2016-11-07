@@ -21,6 +21,7 @@ port = {{ homu.web.port }}
 {% if homu.web.secret %}
 secret = "{{ homu.web.secret }}"
 {% endif %}
+sync_on_start = {{ homu.web.sync_on_start }}
 
 {% for repo in homu.repos %}
 [repo.'{{ repo.slug }}']
