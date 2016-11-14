@@ -36,6 +36,7 @@ def append(slug, ci):
             'solano': True if ci == 'solano' else False,
         }
 
+
 if os.environ.get('HOMU_APPVEYOR_REPOS'):
     for slug in os.environ['HOMU_APPVEYOR_REPOS'].split(' '):
         append(slug, 'appveyor')
