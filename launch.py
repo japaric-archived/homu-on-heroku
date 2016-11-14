@@ -10,6 +10,7 @@ with open('cfg.template.toml') as f:
 
 ssh_key = os.environ.get('GIT_SSH_KEY', '')
 admin_secret = os.environ.get('HOMU_WEB_SECRET', '')
+sync_on_start = os.environ.get('SYNC_ON_START', 'false')
 
 repos = {}
 
@@ -32,6 +33,7 @@ def append(slug, ci):
             'travis': True if ci == 'travis' else False,
         }
 
+
 for slug in os.environ['HOMU_APPVEYOR_REPOS'].split(' '):
     append(slug, 'appveyor')
 
@@ -53,7 +55,8 @@ homu = {
     'reviewers': os.environ['HOMU_REVIEWERS'].split(' '),
     'web': {
         'port': os.environ['PORT'],
-        'secret': admin_secret if admin_secret else 'false'
+        'secret': admin_secret if admin_secret else 'false',
+        'sync_on_start': 'true' if sync_on_start != 'false' else 'false'
     },
 }
 
